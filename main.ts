@@ -1,6 +1,6 @@
 namespace MRW
 {
-    export function About(){ basic.showString("MRW extensions library") }
+    export function About(): string{ return "MRW extensions library" }
 export function doBargraphLoopForever (s : neopixel.Strip) {
     let direction = 0
     let count = 0
