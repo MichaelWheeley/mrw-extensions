@@ -8,25 +8,31 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [8.x]
+        node-version: [16.x]
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
+
+      - name: Install PXT and set target
         run: |
           npm install -g pxt
           pxt target microbit
-      - name: Checkout current state
+
+      - name: Reset working directory
         run: |
           git checkout -- .
           git clean -fd
+
       - name: Fix files listed in config if necessary
         run: pxt checkpkgcfg
+
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v6
         with:
           title: 'Removing missing files from pxt.json'
           commit-message: 'Removing missing files from pxt.json'

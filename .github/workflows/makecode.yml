@@ -1,29 +1,33 @@
 name: MakeCode
 
-on: [push]
+on:
+  push:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [8.x]
+        node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
+
+      - name: Install PXT and set target
         run: |
           npm install -g pxt
           pxt target microbit
-      - name: build
-        run: |
-          pxt install
-          pxt build --cloud
+
+      - name: Install dependencies
+        run: pxt install
+
+      - name: Build project
+        run: pxt build --cloud
         env:
           CI: true
