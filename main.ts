@@ -1,11 +1,20 @@
 namespace MRW {
+  /**
+   * Returns information about the MRW extensions library.
+   * @returns A string containing information about the library.
+   */
   export function About(): string {
     return "MRW extensions library";
   }
-  export function doBargraphLoopForever(s: neopixel.Strip) {
+
+  /**
+   * Performs a bargraph animation on the specified neopixel strip.
+   * @param s The neopixel strip to animate.
+   */
+  export function doBargraphLoopForever(s: neopixel.Strip): void {
     let direction = 0;
     let count = 0;
-    basic.forever(function () {
+    basic.forever(() => {
       count = count + direction;
       if (count >= 30) direction = -1;
       if (count <= 0) direction = 1;
@@ -15,7 +24,11 @@ namespace MRW {
       s.show();
     });
   }
-  export function doRainbowLoopForever(s: neopixel.Strip) {
+  /**
+   * Performs a rainbow animation on the specified neopixel strip.
+   * @param s The neopixel strip to animate.
+   */
+  export function doRainbowLoopForever(s: neopixel.Strip): void {
     let counter = 0;
     basic.forever(function () {
       s.showRainbow(counter, counter + 75);
@@ -25,7 +38,11 @@ namespace MRW {
       }
     });
   }
-  export function setupGreenPurple(s: neopixel.Strip) {
+  /**
+   * Sets up the neopixel strip with green and purple colors.
+   * @param s The neopixel strip to configure.
+   */
+  export function setupGreenPurple(s: neopixel.Strip): void {
     for (let index = 0; index <= 29; index++) {
       s.setPixelColor(index, neopixel.colors(NeoPixelColors.Green));
     }
@@ -35,7 +52,11 @@ namespace MRW {
     }
     s.show();
   }
-  export function setupRedWhiteBlue(s: neopixel.Strip) {
+  /**
+   * Sets up the neopixel strip with red, white, and blue colors.
+   * @param s The neopixel strip to configure.
+   */
+  export function setupRedWhiteBlue(s: neopixel.Strip): void {
     let i = 0;
     while (i < 30) {
       s.setPixelColor(2 + i, neopixel.colors(NeoPixelColors.Red));
@@ -45,7 +66,12 @@ namespace MRW {
     }
     s.show();
   }
-  export function rotateForever(s: neopixel.Strip, pause: number = 5) {
+  /**
+   * Rotates the neopixel strip forever.
+   * @param s The neopixel strip to rotate.
+   * @param pause The pause time between rotations.
+   */
+  export function rotateForever(s: neopixel.Strip, pause: number = 5): void {
     basic.forever(function () {
       basic.pause(pause);
       s.rotate(1);
