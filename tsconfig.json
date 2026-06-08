@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "target": "es2022",
         "noImplicitAny": true,
         "outDir": "built",
         "rootDir": "."
