@@ -1,5 +1,11 @@
-// tests go here; this will not be compiled when this package is used as an extension.
-MRW.About();
-let strip = neopixel.create(DigitalPin.P0, 30, NeoPixelMode.RGB);
+/** @file  */
+
+const aboutInfo = MRW.About();
+basic.showString(aboutInfo);
+
+const numberOfLeds = 30;
+const neoPixelMode = NeoPixelMode.RGB;
+const strip = neopixel.create(DigitalPin.P0, numberOfLeds, neoPixelMode);
+
 MRW.setupGreenPurple(strip);
 MRW.rotateForever(strip, 100);

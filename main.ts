@@ -24,13 +24,14 @@ namespace MRW {
       s.show();
     });
   }
+
   /**
    * Performs a rainbow animation on the specified neopixel strip.
    * @param s The neopixel strip to animate.
    */
   export function doRainbowLoopForever(s: neopixel.Strip): void {
     let counter = 0;
-    basic.forever(function () {
+    basic.forever(() => {
       s.showRainbow(counter, counter + 75);
       counter++;
       if (counter > 360) {
@@ -38,6 +39,7 @@ namespace MRW {
       }
     });
   }
+
   /**
    * Sets up the neopixel strip with green and purple colors.
    * @param s The neopixel strip to configure.
@@ -52,6 +54,7 @@ namespace MRW {
     }
     s.show();
   }
+
   /**
    * Sets up the neopixel strip with red, white, and blue colors.
    * @param s The neopixel strip to configure.
@@ -66,13 +69,14 @@ namespace MRW {
     }
     s.show();
   }
+  
   /**
    * Rotates the neopixel strip forever.
    * @param s The neopixel strip to rotate.
-   * @param pause The pause time between rotations.
+   * @param pause The pause time [ms] between rotations.
    */
-  export function rotateForever(s: neopixel.Strip, pause: number = 5): void {
-    basic.forever(function () {
+  export function rotateForever(s: neopixel.Strip, pause: uint32 = 5): void {
+    basic.forever(() => {
       basic.pause(pause);
       s.rotate(1);
       s.show();
