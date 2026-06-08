@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "target": "es2022",
-        "noImplicitAny": true,
-        "outDir": "built",
-        "rootDir": "."
-    },
-    "exclude": ["pxt_modules/**/*test.ts"]
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2022",
+    "noImplicitAny": true,
+    "outDir": "built",
+    "rootDir": "."
+  },
+  "exclude": ["pxt_modules/**/*test.ts"]
 }

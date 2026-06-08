@@ -1,24 +1,17 @@
 {
-    "name": "MRW extensions",
-    "version": "0.0.3",
-    "description": "",
-    "dependencies": {
-        "core": "*",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.7.6"
-    },
-    "files": [
-        "main.ts",
-        "README.md"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "targetVersions": {
-        "target": "8.0.22",
-        "targetId": "microbit"
-    },
-    "supportedTargets": [
-        "microbit"
-    ],
-    "preferredEditor": "tsprj"
+  "name": "MRW extensions",
+  "version": "0.0.3",
+  "description": "",
+  "dependencies": {
+    "core": "*",
+    "neopixel": "github:microsoft/pxt-neopixel#v0.7.6"
+  },
+  "files": ["main.ts", "README.md"],
+  "testFiles": ["test.ts"],
+  "targetVersions": {
+    "target": "8.0.22",
+    "targetId": "microbit"
+  },
+  "supportedTargets": ["microbit"],
+  "preferredEditor": "tsprj"
 }

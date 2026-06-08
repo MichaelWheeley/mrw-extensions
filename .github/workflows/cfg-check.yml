@@ -1,7 +1,6 @@
 name: Check pxt.json
 
-on:
-  push
+on: push
 
 jobs:
   check-cfg:
@@ -34,6 +33,6 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          title: 'Removing missing files from pxt.json'
-          commit-message: 'Removing missing files from pxt.json'
+          title: "Removing missing files from pxt.json"
+          commit-message: "Removing missing files from pxt.json"
           delete-branch: true
