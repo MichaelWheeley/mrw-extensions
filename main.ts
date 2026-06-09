@@ -75,11 +75,11 @@ namespace MRW {
   /**
    * Rotates the neopixel strip forever.
    * @param s The neopixel strip to rotate.
-   * @param pause The pause time [ms] between rotations.
+   * @param pause_ms The pause time [ms] between rotations.
    */
-  export function rotateForever(s: neopixel.Strip, pause: number = 5): void {
+  export function rotateForever(s: neopixel.Strip, pause_ms: number = 5): void {
     basic.forever(() => {
-      basic.pause(pause);
+      basic.pause(pause_ms);
       s.rotate(1);
       s.show();
     });
