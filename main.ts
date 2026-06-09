@@ -11,7 +11,10 @@ namespace MRW {
    * Performs a bargraph animation on the specified neopixel strip.
    * @param s The neopixel strip to animate.
    */
-    export function doBargraphLoopForever(s: neopixel.Strip, pause_ms: number = 0): void {
+  export function doBargraphLoopForever(
+    s: neopixel.Strip,
+    pause_ms: number = 0,
+  ): void {
     let direction = 0;
     let count = 0;
     basic.forever(() => {
@@ -30,14 +33,17 @@ namespace MRW {
    * Performs a rainbow animation on the specified neopixel strip.
    * @param s The neopixel strip to animate.
    */
-  export function doRainbowLoopForever(s: neopixel.Strip, pause_ms: number = 0): void {
+  export function doRainbowLoopForever(
+    s: neopixel.Strip,
+    pause_ms: number = 0,
+  ): void {
     let counter = 0;
     basic.forever(() => {
       s.showRainbow(counter, counter + 75);
       counter++;
       if (counter > 360) {
         counter = counter - 360;
-      };
+      }
       basic.pause(pause_ms);
     });
   }
@@ -84,13 +90,11 @@ namespace MRW {
       s.show();
     });
   }
-
-  namespace Flags { 
-enum FlagEnum {
-  USA,
-  France,
 }
 
+namespace MRW.Flags {
+  enum FlagEnum {
+    USA,
+    France,
   }
-
 }

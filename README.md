@@ -5,8 +5,7 @@ This repository can be added as an **extension** in MakeCode. Import as **https:
 this the PXT project on Git:
 https://github.com/microsoft/pxt/tree/master
 
-
 https://makecode.com/cli
 
 pxt build --cloud
-pxt serve 
+pxt serve
