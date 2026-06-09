@@ -90,11 +90,10 @@ namespace MRW {
       s.show();
     });
   }
-}
 
-namespace MRW.Flags {
   enum FlagEnum {
     USA,
     France,
   }
+
 }
