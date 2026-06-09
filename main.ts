@@ -91,7 +91,7 @@ namespace MRW {
     });
   }
 
-  enum FlagEnum {
+  export enum FlagEnum {
     USA,
     France,
   }
