@@ -95,4 +95,44 @@ namespace MRW {
     USA,
     France,
   }
+
+  export const doFlagReset = (_flag: Flag = Flag.USA, _stripSize: number) => {
+    switch (_flag) {
+      default:
+      case MRW.Flag.USA:
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue));
+        for (
+          let index = _stripSize - 1;
+          index > _stripSize / 3 + 1;
+          index -= 2
+        ) {
+          strip.setPixelColor(index, neopixel.colors(NeoPixelColors.Red));
+          strip.setPixelColor(index - 1, neopixel.colors(NeoPixelColors.White));
+        }
+
+        strip.setPixelColor(
+          _stripSize / 3 + 1,
+          neopixel.colors(NeoPixelColors.Red),
+        );
+        break;
+
+      case MRW.Flag.France:
+        for (let index2 = 0; index2 <= _stripSize - 1; index2++) {
+          let color: NeoPixelColors;
+          if (index2 >= (_stripSize * 2) / 3) {
+            color = NeoPixelColors.Red;
+          } else if (index2 >= _stripSize / 3) {
+            color = NeoPixelColors.White;
+          } else {
+            color = NeoPixelColors.Blue;
+          }
+
+          strip.setPixelColor(index2, neopixel.colors(color));
+        }
+
+        break;
+    }
+
+    strip.show();
+  };
 }
