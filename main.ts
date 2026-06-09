@@ -84,4 +84,13 @@ namespace MRW {
       s.show();
     });
   }
+
+  namespace Flags { 
+enum FlagEnum {
+  USA,
+  France,
+}
+
+  }
+
 }
