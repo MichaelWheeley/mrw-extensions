@@ -91,19 +91,36 @@ namespace MRW {
     });
   }
 
+  /**
+   * Defines the available flags for the FlagsTool class.
+   */
   export enum Flags {
     USA,
     France,
   }
 
+  /**
+   * A tool for displaying flags on a neopixel strip.
+   */
   export class FlagsTool {
     private s: neopixel.Strip;
     private stripSize: number;
+
+    /**
+     *
+     * @param s A neopixel strip to be used for displaying flags
+     * @param stripSize The size of the neopixel strip, which determines how many pixels are available for displaying the flags
+     */
     constructor(s: neopixel.Strip, stripSize: number) {
       this.s = s;
       this.stripSize = stripSize;
     }
 
+    /**
+     * Resets the flag display on the neopixel strip based on the specified flag type.
+     * @param flag The flag type to display. If not provided, it defaults to the USA flag.
+     * The method uses a switch statement to determine which flag to display based on the provided flag type. It sets the appropriate colors for each pixel on the strip to create the desired flag pattern, and then calls the show method to update the display.
+     */
     public doFlagReset(flag: Flags = Flags.USA): void {
       switch (flag) {
         default:
